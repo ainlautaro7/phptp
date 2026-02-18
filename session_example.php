@@ -11,7 +11,7 @@ if (isset($_POST['cerrar_sesion'])) {
     session_destroy();
 
     // Redirigir al inicio del archivo para que se restablezca el estado (el formulario)
-    header("Location: session_example.php");
+    header("Location: ". $_SERVER['PHP_SELF']);
     exit();
 }
 
@@ -22,7 +22,7 @@ if (isset($_SESSION['nombre_usuario'])) {
     
     // Mostrar el botón para cerrar sesión
     ?>
-    <form action="session_example.php" method="POST">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <input type="submit" name="cerrar_sesion" value="Cerrar sesión">
     </form>
     <?php
@@ -40,7 +40,7 @@ if (isset($_SESSION['nombre_usuario'])) {
         
         // Mostrar el botón para cerrar sesión
         ?>
-        <form action="session_example.php" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <input type="submit" name="cerrar_sesion" value="Cerrar sesión">
         </form>
         <?php
@@ -48,7 +48,7 @@ if (isset($_SESSION['nombre_usuario'])) {
         // Formulario de inicio de sesión
         ?>
         <h2>Formulario de inicio de sesión</h2>
-        <form action="session_example.php" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <label for="nombre_usuario">Nombre de usuario:</label><br>
             <input type="text" id="nombre_usuario" name="nombre_usuario" required><br><br>
             <input type="submit" value="Iniciar sesión">
