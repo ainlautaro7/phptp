@@ -20,7 +20,7 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['correo'])) {
 } else {
     // Si no hay datos en la sesión, mostrar el formulario
 ?>
-    <h2>Formulario de contacto</h2>
+    <h2>Formulario de contacto 2</h2>
     <form action="formulario.php" method="POST">
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" required><br><br>
